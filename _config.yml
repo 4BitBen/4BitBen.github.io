@@ -1,0 +1,15 @@
+# Site settings
+title: Software Engineer
+#email: banelson4@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Software Engineer interested in databases, distributed systems, 
+  data structures and algorithms, and tools that make development easier.
+  I am constantly striving to learn.
+  All opinions expressed here are my own.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://4BitBen.github.io" # the base hostname & protocol for your site
+twitter_username: 4BitBen
+github_username:  4BitBen
+
+# Build settings
+markdown: kramdown
