@@ -51,3 +51,8 @@ crashlytics-build.properties
 ### Jekyll template
 _site/
 .sass-cache/
+
+### Vagrant template
+.vagrant/
+
+
