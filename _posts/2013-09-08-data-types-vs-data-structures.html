@@ -1,0 +1,39 @@
+---
+layout: post
+title: Data Types vs Data Structures
+date: 2013-09-08 21:46:40.000000000 -04:00
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+---
+<p>As you come across different data structures, you will see references to different data types. This post tries to clarify a data type vs a data structure and looks at which is best to use when developing an algorithm.</p>
+<h2>Data Types</h2>
+<p>Data Types are used in type systems - e.g. Java, C, etc. - and are typically categorized into three categories: primitives, composites, and abstract types. More advanced data types exist, which are built on top of these data types.  For example, CRDTs (Conflict-free Replicated Data Types) can be used to achieve Strong Eventual Consistency in a distributed environment. [1]</p>
+<h3>Primitive Types</h3>
+<p>Primitive types are the lowest level building blocks for an engineer. These include integers, booleans, characters, floating point numbers, etc. and are generally built into various programming languages.</p>
+<h3>Composite Types</h3>
+<p>Composite types are typically derived from more than one primitive type. Some examples are the following:</p>
+<p><em>Union</em> - stores a single type. It defines all possible types it can be but stores its one current value as well as its one current type.  e.g. an integer OR a floating point number</p>
+<p><em>Arrays</em> - stores a number of elements of the same type in a specific order and duplicates are allowed</p>
+<p><em>Set</em> - stores a number of elements where order does not matter and duplicates are NOT allowed</p>
+<p><em>Tuples</em> (aka Record or Struct) - stores a fixed number of elements of differing type in a specific order</p>
+<h3>Abstract Data Types</h3>
+<p>Abstract data types are data types that don't specify an implementation.  I like to think of these as interfaces.  Most of these are implemented as interfaces in Java.  Common ADTs are Lists, Sets, Maps (aka Associative Array or Dictionary), Queue, Priority Queue, Deque, Stack, Tree, Bag (aka Multiset), etc.</p>
+<p><strong></strong><span style="color:#2b6fb6;font-size:1.5em;line-height:1.7;">Data Structures</span></p>
+<p>Data structures are typically composite types.  They take into account both the data that is stored and how the data is related to each other.  In some cases, there is an ephemeral version of a data structure and a persistent version of a data structure [2].  Data structures can be categorized as the following:</p>
+<h3>Linear Data Structures</h3>
+<p>Typically, these are some form of an array or a linked list.  There are many variations of each - e.g. dynamic array, sparse array for arrays and <a title="Skip List" href="http://en.wikipedia.org/wiki/Skip_list">skip list</a>, singly linked list, doubly linked list for lists.  There are subtle trade-offs between each.</p>
+<h3>Trees</h3>
+<p>Most trees are binary trees, binary search trees, and self-balancing trees.  In addition, there are B-Trees, which have more than two children and have trade-offs where they might take up more space but not need to be re-balanced as much as self-balancing binary trees.  There are also <a title="Heap Data Structure" href="http://en.wikipedia.org/wiki/Heap_(data_structure)">heaps</a>, which have looser requirements than a binary search tree in regards to how the children relate to its parent.</p>
+<h3>Hashes</h3>
+<p>Hash data structures involve a hash function, which maps data of variable length to data of a fixed length.  Due to mapping from variable length to fixed length, collisions will most likely occur and some sort of collision detection and resolution might exist.  Also, certain hash functions could have certain properties to them - e.g. locality preserving hashing tries to keep data that is "similar" mapped to the same bucket.</p>
+<h3>Graphs</h3>
+<p>Graph data structures are becoming more popular due to a suite of Graph Databases, like <a title="Neo4J" href="http://neo4j.org/">Neo4J</a>.  Typically, Graphs deal with Vertices and Edges where a Vertex is typically efficient at finding other Vertices that are directly connected to that Vertex. There are directed graphs, adjacency lists, and more. Many graph algorithms work on graph data structures - e.g. Dijkstra's algorithm to find the shortest path.</p>
+<h2>Algorithms</h2>
+<blockquote><p>"It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures" -Alan Perlis</p></blockquote>
+<p>When dealing with algorithms, I think it is best to apply algorithms to data types (assuming you are in a type system) - either primitive, composite, or abstract data types. By doing that, you will have algorithms that apply to one data type (interface) that can be used across multiple data structures (implementations). However, this will not work for all algorithms, so do not be careless when swapping out implementations thinking they will behave the same. For example, say you have a <a title="Binary Search Algorithm" href="http://en.wikipedia.org/wiki/Binary_search_algorithm">binary search algorithm</a> that goes against a List interface in Java and use an ArrayList. The algorithm has a time complexity of O(log n) for arrays. Later, it makes more sense for your application to use a LinkedList and you forget to revisit this part of the code. When you pass in a LinkedList, you will not get the same performance on your algorithm. With no changes, your algorithm will increase to a time complexity of O(n log n).  So, you might have a binary search algorithm and a brute force search algorithm, and then have a higher level search algorithm that can determine which one to use. NOTE: this is why there is a <a title="Random Access JavaDoc" href="http://docs.oracle.com/javase/7/docs/api/java/util/RandomAccess.html">RandomAccess</a> <a title="Marker Interface Pattern" href="http://en.wikipedia.org/wiki/Marker_interface_pattern">marker interface</a> in Java that is used for binarySearch method on the Collections class.  The purpose of this marker interface is to know whether to perform a binary search or a brute force search on the list.</p>
+<p><em>References:</em></p>
+<p>[1] Shapiro, Marc. Conflict-free Replicated Data Types. <a href="http://hal.inria.fr/docs/00/61/73/41/PDF/RR-7687.pdf">http://hal.inria.fr/docs/00/61/73/41/PDF/RR-7687.pdf</a></p>
+<p>[2] Persistent Data Structure. <a href="http://en.wikipedia.org/wiki/Persistent_data_structure">http://en.wikipedia.org/wiki/Persistent_data_structure</a></p>
