@@ -8,7 +8,9 @@ To enable creating a site and blog.
 
 ## Build
 
-    $ vagrant up
-    $ jekyll serve --host 0.0.0.0
+    vagrant up
+    vagrant ssh
+    cd /vagrant
+    jekyll serve --host 0.0.0.0
     
 Go to [http://192.168.33.10:4000/](http://192.168.33.10:4000/)
