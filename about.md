@@ -5,13 +5,14 @@ permalink: /about/
 ---
 
 # About Me
-I'm Ben and I currently work at Fluke Networks. My passion is in distributed systems and automation, while being 
-involved in the full life cycle of a product. Here are a few things that are important me:
+My name is Ben and I am currently a senior software engineer at Fluke Networks in Colorado. My passion is in 
+distributed systems and automation, while being involved in the full life cycle of a product. Here are a few things 
+that are important me:
 
 ## Learning
-I am obsessed with learning. I enjoy reading papers and learning new tools and techniques that help make development 
-easier.  As I learn, I try to apply what I learn. If possible, I enjoy sharing what I have learned, as well as learning
-from others. 
+I am obsessed with learning. I enjoy [reading papers](https://github.com/papers-we-love/papers-we-love), 
+[blogs](http://www.bailis.org/blog/), and learning new tools and techniques that help make development easier.  As I 
+learn, I try to apply what I learn. If possible, I enjoy sharing what I have learned, as well as learning from others. 
 
 ## Sandbox Environment
 I enjoy using tools that give me some level of isolation - either machine isolation through [Vagrant](www.vagrantup.com) 
@@ -19,15 +20,15 @@ or process isolation through [Docker](www.docker.com). This makes it very easy t
 affecting my day-to-day environment.
 
 ## Automation
-Also, automating the provisioning of the machine or process through some combination of CM tools - scripts, 
-[Puppet](http://docs.puppetlabs.com/puppet), etc. - is extremely important so that I can easily switch learning 
+Automating the provisioning of the machine or process through some combination of CM tools - scripts, 
+[Puppet](http://docs.puppetlabs.com/puppet), etc. - is extremely important. This allows me to easily switch learning 
 contexts or even share what I am learning with someone else.
 
 ## Fail Fast
-I screw up all the time. I want to know as quickly as possible when that happens. It could be as easy as a compiler 
+Errors are inevitable. I want to know as quickly as possible when that happens. It could be as easy as a compiler 
 telling me that, unit tests that indicate a logic error through [example-based tests](http://junit.org/) or 
 [property-based tests](https://github.com/pholser/junit-quickcheck), or [static analysis tools](http://findbugs.sourceforge.net/)
-that might show a concurrency error. All of these are ways to help me know I screwed up.
+that might show a concurrency error. All of these are ways to help me know when an error has occurred.
 
 ## Metrics
 I enjoy understanding how my code works in the wild. By [instrumenting my code](https://dropwizard.github.io/metrics),
