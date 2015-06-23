@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 # About Me
-My name is Ben and I am currently a senior software engineer at Fluke Networks in Colorado. My passion is in 
+My name is Ben, and I am currently a senior software engineer at Fluke Networks in Colorado. My passion is in 
 distributed systems and automation, while being involved in the full life cycle of a product. Here are a few things 
 that are important me:
 
